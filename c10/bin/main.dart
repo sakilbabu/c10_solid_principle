@@ -1,39 +1,18 @@
-void main(List<String> args) {}
+main(List<String> args) {}
 
-class Cal implements Add,Sub,Mul,Div{
-  @override
-  doAdd(int x, int y) {
-    
-  }
+class Product {}
 
-  @override
-  doSub(int x, int y) {
-    
-  }
+class Client {}
 
-  @override
-  doDiv(int x, int y) {
-    
-  }
-
-  @override
-  doMul(int x, int y) {
-   
-  }
+class Order {
+  complete(Product product, Client client) {}
 }
 
-abstract class Add {
-  doAdd(int x,int y);
-}
-
-abstract class Sub {
-  doSub(int x,int y);
-}
-
-abstract class Mul {
-  doMul(int x,int y);
-}
-
-abstract class Div {
-  doDiv(int x,int y);
+class OrderController {
+  Order order = Order();
+  Product product = Product();
+  Client client = Client();
+  completeOrder() {
+    order.complete(product, client);
+  }
 }
