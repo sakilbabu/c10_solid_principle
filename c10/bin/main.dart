@@ -5,14 +5,19 @@ class Product {}
 class Client {}
 
 class Order {
-  complete(Product product, Client client) {}
+  final List<Product> products;
+  final Client client;
+
+  Order({required this.products, required this.client});
+  complete() {}
 }
 
 class OrderController {
-  Order order = Order();
-  Product product = Product();
+  List<Product> products = List.empty();
   Client client = Client();
+
   completeOrder() {
-    order.complete(product, client);
+    Order order = Order(products: products, client: client);
+    order.complete();
   }
 }
