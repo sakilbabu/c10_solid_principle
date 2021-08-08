@@ -1,36 +1,39 @@
-void main(List<String> arguments) {
-  murder(Animal(4, 2));
-  murder(Donkey(4, 0));
-  murder(Dolphin(0, 0, 80));
+void main(List<String> args) {}
 
+class Cal implements Add,Sub,Mul,Div{
+  @override
+  doAdd(int x, int y) {
+    
+  }
+
+  @override
+  doSub(int x, int y) {
+    
+  }
+
+  @override
+  doDiv(int x, int y) {
+    
+  }
+
+  @override
+  doMul(int x, int y) {
+   
+  }
 }
 
-class Animal {
-  final int numOfLegs;
-  final int numOfHorns;
-
-  Animal(this.numOfLegs, this.numOfHorns);
+abstract class Add {
+  doAdd(int x,int y);
 }
 
-class InteligentAnimal extends Animal {
-  final int levelOfInteligence;
-
-  InteligentAnimal(int numOfLegs, int numOfHorns, this.levelOfInteligence)
-      : super(numOfLegs, numOfHorns);
+abstract class Sub {
+  doSub(int x,int y);
 }
 
-class Donkey extends Animal {
-  Donkey(int numOfLegs, int numOfHorns) : super(numOfLegs, numOfHorns);
+abstract class Mul {
+  doMul(int x,int y);
 }
 
-class Human extends InteligentAnimal {
-  Human(int numOfLegs, int numOfHorns, int levelOfInteligence)
-      : super(numOfLegs, numOfHorns, levelOfInteligence);
+abstract class Div {
+  doDiv(int x,int y);
 }
-
-class Dolphin extends InteligentAnimal {
-  Dolphin(int numOfLegs, int numOfHorns, int levelOfInteligence)
-      : super(numOfLegs, numOfHorns, levelOfInteligence);
-}
-
-murder(Animal animal) {}
